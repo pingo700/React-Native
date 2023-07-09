@@ -10,9 +10,9 @@ export default function Form(){
     const [messageResult, setMessageResult] = useState("Preencha o usuário e a senha !")
 
     function LoginUsuario(){
-        axios.post(baseURL, {
-            EMAIL: usuario,
-            SENHA: senha
+        api.post('/LoginAuth', {
+            EMAIL: 'kauabastos2003@gmail.com',
+            SENHA: '124'
             }).then((response) => {
                 setMessageResult(response.data);
             });
@@ -41,7 +41,7 @@ export default function Form(){
                 onChange={setSenha}
                 placeholder="Senha"
                 value={senha}
-                keyboardType="text"></TextInput>
+                keyboardType="phone-pad"></TextInput>
                 <Button 
                 onPress={() => Validator()}
                 title="Entrar"/>
